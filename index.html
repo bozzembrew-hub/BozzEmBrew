@@ -1,0 +1,855 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BOZZ EM BREW</title>
+
+<style>
+:root {
+    --green: #10230f;
+    --olive: #4f5f2d;
+    --cream: #f5ecd9;
+    --gold: #c58a2b;
+    --brown: #6b3f18;
+    --dark: #171009;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--cream);
+    color: #211d16;
+    line-height: 1.6;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 6%;
+
+    background: rgba(16, 35, 15, 0.94);
+    backdrop-filter: blur(12px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.brand img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    background: white;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d9a94d;
+}
+
+.button {
+    display: inline-block;
+
+    background: var(--olive);
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 25px;
+
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+
+    align-items: center;
+
+    padding: 120px 7% 70px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #120b05,
+            #201408,
+            #4a3118
+        );
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.kicker {
+    color: #d9a94d;
+
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    line-height: 0.86;
+
+    margin: 20px 0;
+
+    letter-spacing: 3px;
+}
+
+.hero-description {
+    font-family: Arial, sans-serif;
+
+    font-size: 1.05rem;
+
+    color: #eee;
+
+    margin-bottom: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+
+    max-height: 600px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.5);
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 85px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    color: var(--green);
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+
+    margin-bottom: 45px;
+}
+
+/* ================= BEST SELLERS ================= */
+
+.best-sellers {
+    background: #efe2ca;
+}
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+.product {
+    background: #fff8ea;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(49,35,17,0.12);
+
+    border: 1px solid #dfcfb1;
+
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(49,35,17,0.2);
+}
+
+.product img {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: var(--green);
+
+    font-size: 1.5rem;
+
+    margin-bottom: 6px;
+}
+
+.product-info p {
+    font-family: Arial, sans-serif;
+
+    color: #665d50;
+
+    font-size: 0.92rem;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: var(--green);
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 55px;
+
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+
+    border-radius: 25px;
+}
+
+.about-content .kicker {
+    margin-bottom: 8px;
+}
+
+.about h2 {
+    font-size: 3rem;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-family: Arial, sans-serif;
+
+    color: #e8e5dc;
+}
+
+/* ================= MENU ================= */
+
+.menu-section {
+    background: #f7eddc;
+}
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.menu-card {
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 25px rgba(49,35,17,0.1);
+}
+
+.menu-card img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 17px;
+}
+
+/* ================= COFFEE CART ================= */
+
+.coffee-cart {
+    background: #17250f;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.coffee-cart h2 {
+    font-size: 3.2rem;
+
+    line-height: 1.05;
+
+    margin: 15px 0;
+}
+
+.coffee-cart p {
+    font-family: Arial, sans-serif;
+
+    color: #ddd;
+
+    margin-bottom: 25px;
+}
+
+.coffee-cart img {
+    width: 100%;
+
+    border-radius: 25px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background: #21170d;
+
+    color: white;
+}
+
+.contact .section-title {
+    color: var(--cream);
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.contact-info {
+    border-left: 1px solid #7d684a;
+
+    padding-left: 20px;
+}
+
+.contact-info strong {
+    display: block;
+
+    color: #d9a94d;
+
+    font-family: Arial, sans-serif;
+
+    margin-bottom: 8px;
+}
+
+.contact-info span {
+    font-family: Arial, sans-serif;
+
+    color: #eee;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #120d08;
+
+    color: #b9ad9d;
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.85rem;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero,
+    .about,
+    .coffee-cart {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .products {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 560px) {
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .coffee-cart h2 {
+        font-size: 2.5rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<a href="#home" class="brand">
+    <img src="logo_1.png" alt="BOZZ EM BREW Logo">
+    <span>Bozz Em Brew</span>
+</a>
+
+<div class="nav-links">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#menu">MENU</a>
+    <a href="#best">BEST SELLERS</a>
+    <a href="#contact">CONTACT</a>
+</div>
+
+<a href="#menu" class="button">
+    VIEW MENU
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header id="home" class="hero">
+
+<div class="hero-content">
+
+    <div class="kicker">
+        Always Fresh & Newly Grind Beans
+    </div>
+
+    <h1>
+        BOZZ EM<br>
+        BREW
+    </h1>
+
+    <p class="hero-description">
+        Good Coffee. Good Vibes. Great Moments.
+    </p>
+
+    <a href="#best" class="button">
+        EXPLORE BEST SELLERS ☕
+    </a>
+
+</div>
+
+<div class="hero-image">
+
+    <img
+        src="milktea.jpg"
+        alt="Bozz Em Brew Milk Tea"
+    >
+
+</div>
+
+</header>
+
+
+<!-- ================= BEST SELLERS ================= -->
+
+<section id="best" class="best-sellers">
+
+<h2 class="section-title">
+    BEST SELLERS
+</h2>
+
+<div class="products">
+
+<!-- OKINAWA -->
+
+<div class="product">
+
+<img
+    src="okinawa.png"
+    alt="Okinawa"
+>
+
+<div class="product-info">
+
+<h3>Okinawa</h3>
+
+<p>
+Creamy and comforting with a hint of brown sugar.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- MATCHA -->
+
+<div class="product">
+
+<img
+    src="matcha.png"
+    alt="Matcha"
+>
+
+<div class="product-info">
+
+<h3>Matcha</h3>
+
+<p>
+Earthy, smooth and refreshing.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- JAVA CHIPS -->
+
+<div class="product">
+
+<img
+    src="java-chips.png"
+    alt="Java Chips"
+>
+
+<div class="product-info">
+
+<h3>Java Chips</h3>
+
+<p>
+A rich coffee blend with chocolatey crunch.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- DARK CHOCO -->
+
+<div class="product">
+
+<img
+    src="dark-choco.png"
+    alt="Dark Choco"
+>
+
+<div class="product-info">
+
+<h3>Dark Choco</h3>
+
+<p>
+Rich, smooth and chocolatey.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about">
+
+<div class="about-image">
+
+<img
+    src="coffee-cart.png"
+    alt="Bozz Em Brew Coffee Cart"
+>
+
+</div>
+
+<div class="about-content">
+
+<div class="kicker">
+    Brewed with passion, served with heart.
+</div>
+
+<h2>
+    Made for coffee moments.
+</h2>
+
+<p>
+Bozz Em Brew brings freshly brewed coffee,
+milk tea, frappé, fruit soda, matcha, and food
+together in one warm and welcoming brand.
+</p>
+
+<br>
+
+<p>
+Whether you're catching up with friends,
+grabbing a quick drink, or planning an event,
+we're here to make every moment better.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section id="menu" class="menu-section">
+
+<h2 class="section-title">
+    OUR MENU
+</h2>
+  
+<div class="menu-grid">
+
+<div class="menu-card">
+
+<img
+    src="menu-milktea.png"
+    alt="Milk Tea, Frappé and Fruit Soda Menu"
+>
+
+</div>
+
+<div class="menu-card">
+
+<img
+    src="menu-milktea2.jpg"
+    alt="Coffee and Matcha Menu"
+>
+
+</div>
+<div class="menu-card">
+
+<img
+    src="menu-coffee.png"
+    alt="Coffee and Matcha Menu"
+>
+</div>
+
+</section>
+
+
+<!-- ================= COFFEE CART ================= -->
+
+<section class="coffee-cart">
+
+<div>
+
+<div class="kicker">
+    BOZZ EM COFFEE CART
+</div>
+
+<h2>
+    Bring the brew to your event.
+</h2>
+
+<p>
+Available for weddings, birthdays, baptisms,
+meetings and events.
+</p>
+
+<a href="#contact" class="button">
+    BOOK / INQUIRE
+</a>
+
+</div>
+
+<div>
+
+<img
+    src="coffee-cart.png"
+    alt="Bozz Em Brew Coffee Cart"
+>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">
+    COME VISIT US
+</h2>
+
+<div class="contact-grid">
+
+<div class="contact-info">
+
+<strong>LOCATION</strong>
+
+<span>
+0002 (B) Block 4 Purok 13<br>
+South Daang Hari<br>
+Taguig City
+</span>
+
+</div>
+
+
+<div class="contact-info">
+
+<strong>HOURS</strong>
+
+<span>
+1:00 PM – 12:00 AM<br>
+Every Day
+</span>
+
+</div>
+
+
+<div class="contact-info">
+
+<strong>CONTACT</strong>
+
+<span>
+0905 393 3308<br>
+0994 573 7288
+</span>
+
+</div>
+
+
+<div class="contact-info">
+
+<strong>FOLLOW US</strong>
+
+<span>
+@Bozz Em Brew
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+© 2026 BOZZ EM BREW.
+All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
